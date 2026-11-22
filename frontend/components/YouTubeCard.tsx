@@ -352,7 +352,7 @@ export default function YouTubeCard() {
           </p>
           <p className="text-[11px] leading-relaxed text-mist-500">
             A Google Cloud project still in <span className="text-mist-300">Testing</span> mode admits only accounts
-            added as Test users, caps the project at 100 accounts and expires these connections after 7 days — open
+            added as Test users, caps the project at 100 accounts and expires these connections after 7 days — open{" "}
             <span className="text-mist-300">Add another channel</span> and sign in again to renew one. Brand channels of an
             account that already signs in are unaffected by all three.
           </p>

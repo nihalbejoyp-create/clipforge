@@ -51,7 +51,7 @@ deletes captured footage unless you delete the session.
 
 ## Install & launch
 
-0. Clone the repository and enter it: `git clone <this-repo-url> && cd ClipForge`
+0. Clone the repository and enter it: `git clone https://github.com/nihalbejoyp-create/clipforge.git && cd clipforge`
 1. Double-click **`START.command`**.
 
 That's it. On first run the launcher:

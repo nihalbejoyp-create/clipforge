@@ -1,0 +1,26 @@
+# Local environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Local state: projects, clips, live segments, Whisper models, SQLite (holds
+# the YouTube OAuth client + channel tokens) — never publish any of it.
+data/
+.run/
+.freebuff/
+
+# Assets fetched by backend/scripts/setup_assets.py on first run
+assets/fonts/
+assets/fonts.json
+
+# Secrets & noise
+.env
+.env.*
+*.log
+.DS_Store

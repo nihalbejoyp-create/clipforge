@@ -1,0 +1,14 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+python-multipart>=0.0.9
+yt-dlp>=2024.8.6
+faster-whisper>=1.0.3,<2.0
+numpy>=1.26,<3.0
+# Ships an ffmpeg build with libass (subtitle burn-in) + VideoToolbox hardware encoding.
+imageio-ffmpeg>=0.6.0
+# Font normalisation for the subtitle engine (Google Fonts woff2 -> ttf).
+fonttools>=4.50
+brotli>=1.1
+# Face detection for facecam discovery and smart reframing.
+# Stay on OpenCV 4.x: 5.x dropped the classic Haar cascade API we rely on.
+opencv-python-headless>=4.9,<5

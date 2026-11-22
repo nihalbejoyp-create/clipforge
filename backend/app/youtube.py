@@ -73,8 +73,10 @@ def oauth_error_hint(code: str) -> str:
     """
     hints = {
         "access_denied": (
-            "Google blocked the sign-in. With a consent screen in Testing mode, add the Google "
-            "account you are signing in with under OAuth consent screen \u2192 Test users, then press Connect again."
+            "Google blocked this sign-in. A consent screen in Testing mode only admits accounts "
+            "listed as Test users. Without touching the console: sign in with the same Google "
+            "account and choose a different YouTube channel (brand account) on the chooser. "
+            "To admit another Google account, publish the consent screen \u2014 Audience \u2192 Publish app."
         ),
         "redirect_uri_mismatch": (
             "Google rejected the redirect URI. Create a Desktop app OAuth client \u2014 it needs no "
@@ -417,8 +419,12 @@ def auth_url() -> str:
         "response_type": "code",
         "scope": " ".join(SCOPES),
         "access_type": "offline",
-        # Without prompt=consent a repeat sign-in returns no refresh token.
-        "prompt": "consent",
+        # prompt=consent is what makes a repeat sign-in return a refresh token.
+        # select_account forces Google's account chooser, and with YouTube scopes
+        # that chooser is also the brand-account channel picker: without it the
+        # browser silently reuses the last identity, so a second channel can
+        # never be picked and the only apparent remedy looks like the console.
+        "prompt": "consent select_account",
         "state": state,
         "code_challenge": challenge,
         "code_challenge_method": "S256",

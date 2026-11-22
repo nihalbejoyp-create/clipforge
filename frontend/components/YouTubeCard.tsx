@@ -341,18 +341,20 @@ export default function YouTubeCard() {
             </a>
           </div>
           <p className="text-[11px] leading-relaxed text-mist-500">
-            To add another channel, sign in with that account&apos;s Google login in the tab that opens — every connected
-            channel shares this one Google OAuth client, and the upload window lets you choose which one receives each
-            batch.
+            <span className="text-mist-300">Add another channel</span> always opens Google&apos;s account chooser, so you
+            pick the Google login or the YouTube channel you want — including your own <span className="text-mist-300">brand
+            channels</span>, which need no console setup at all. Every connected channel shares this one Google OAuth
+            client, keeps its own tokens, and the upload window lets you choose which one receives each batch.
           </p>
           <p className="text-[11px] leading-relaxed text-mist-500">
             Vertical clips under three minutes go up as <span className="text-mist-300">Shorts</span> automatically —
             no separate setting to tick.
           </p>
           <p className="text-[11px] leading-relaxed text-mist-500">
-            A Google Cloud project still in <span className="text-mist-300">Testing</span> mode expires these
-            connections after 7 days — open <span className="text-mist-300">Add another channel</span> and sign in again
-            to renew one. Test mode also caps the project at 100 accounts.
+            A Google Cloud project still in <span className="text-mist-300">Testing</span> mode admits only accounts
+            added as Test users, caps the project at 100 accounts and expires these connections after 7 days — open
+            <span className="text-mist-300">Add another channel</span> and sign in again to renew one. Brand channels of an
+            account that already signs in are unaffected by all three.
           </p>
           <details className="pt-1">
             <summary className="cursor-pointer text-[11px] text-mist-500 hover:text-mist-300">

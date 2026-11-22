@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipForge — local AI video &amp; stream clipper</title>
+<meta name="description" content="ClipForge turns long videos and livestreams into short, captioned, watermark-free clips. It runs entirely on your own Mac.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">ClipForge</a>
+  <nav>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="https://github.com/nihalbejoyp-create/clipforge">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <h1>ClipForge</h1>
+  <p class="lede">ClipForge is a desktop application for macOS that turns long videos and livestreams into
+    short, captioned, watermark-free clips. Speech recognition, highlight detection, reframing, subtitle
+    rendering and encoding all run on the user's own computer. There are no accounts, no paid APIs, and no
+    third-party processing of the footage.</p>
+
+  <h2>What the app does</h2>
+  <ul>
+    <li><strong>Normal video clipping</strong> — import an MP4/MOV/MKV/WebM file or a supported video URL,
+      transcribe it locally with Whisper, rank the strongest moments and export ready-to-post shorts.</li>
+    <li><strong>Recorded stream clipping</strong> — the same engine with facecam and gameplay layouts,
+      automatic facecam detection and smart reframing.</li>
+    <li><strong>Live stream clipping</strong> — capture an HLS or RTMP stream, analyse the rolling audio and
+      speech, and cut clips while the broadcast is still live.</li>
+  </ul>
+
+  <h2>How it runs</h2>
+  <p>The download is a small Python engine plus a local web interface served on
+    <code>127.0.0.1</code>. Everything — the database, your clips, the speech model — stays in a
+    <code>data/</code> folder on your machine. The only network traffic ClipForge performs on your behalf is
+    fetching the video URL you ask it to clip, and uploading to a YouTube channel you explicitly connect.</p>
+
+  <h2>YouTube uploads</h2>
+  <p>ClipForge can upload finished clips straight to your own YouTube channel using Google's YouTube Data
+    API. You connect a channel by signing in with Google and granting the
+    <code>youtube.upload</code> and <code>youtube.readonly</code> scopes. The resulting OAuth tokens are
+    stored only in ClipForge's local database on your computer; they are never sent anywhere else, and you can
+    remove a channel at any time from the app's Settings page, which also revokes the token with Google.</p>
+  <p>ClipForge never uploads anything you did not explicitly post, and it never posts on a schedule. See the
+    <a href="/privacy.html">privacy policy</a> for the full detail.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>macOS (Apple Silicon or Intel)</li>
+    <li>Python 3.10+ and Node.js 18+</li>
+    <li><code>ffprobe</code> on the PATH</li>
+  </ul>
+
+  <h2>Get it</h2>
+  <p>ClipForge is free and open source under the MIT licence:
+    <a href="https://github.com/nihalbejoyp-create/clipforge">github.com/nihalbejoyp-create/clipforge</a>.</p>
+</main>
+
+<footer>
+  <p>ClipForge · <a href="/privacy.html">Privacy policy</a> · <a href="/terms.html">Terms of service</a> ·
+    <a href="https://github.com/nihalbejoyp-create/clipforge">Source code</a></p>
+</footer>
+</body>
+</html>
